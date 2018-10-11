@@ -1,8 +1,7 @@
-﻿using Photon.Pun;
-using Photon.Realtime;
+﻿using Photon;
 using UnityEngine;
 
-public class photonConnect : MonoBehaviourPunCallbacks {
+public class photonConnect : Photon.PunBehaviour {
 
     public string versionName = "0.1";
 
@@ -20,8 +19,7 @@ public class photonConnect : MonoBehaviourPunCallbacks {
 
     private void Awake()
     {
-        PhotonNetwork.GameVersion = versionName;
-        PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.ConnectUsingSettings(versionName);
 
         Debug.Log("Connecting to photon...");
     }
@@ -33,7 +31,7 @@ public class photonConnect : MonoBehaviourPunCallbacks {
         Debug.Log("We are connected to Master");
     }
 
-    public override void OnDisconnected(DisconnectCause cause)
+    public override void OnDisconnectedFromPhoton()
     {
         if (sectionView1.activeInHierarchy)
         {

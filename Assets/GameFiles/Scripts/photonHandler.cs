@@ -1,9 +1,8 @@
-﻿using Photon.Pun;
-using Photon.Realtime;
+﻿using Photon;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class photonHandler : MonoBehaviourPunCallbacks {
+public class photonHandler : Photon.PunBehaviour {
 
     public GameObject mainPlayer;
 
@@ -20,7 +19,7 @@ public class photonHandler : MonoBehaviourPunCallbacks {
 
     public void CreateNewRoom(string text)
     {
-        PhotonNetwork.CreateRoom(text, new Photon.Realtime.RoomOptions() { MaxPlayers = 6 }, null);
+        PhotonNetwork.CreateRoom(text, new RoomOptions { MaxPlayers = 6 }, null);
     }
 
     public void JoinOrCreateRoom(string text)

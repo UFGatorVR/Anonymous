@@ -2,12 +2,12 @@ using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
-using Photon.Pun;
+using Photon;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
-    public class MultiplayerFPController : MonoBehaviourPunCallbacks
+    public class MultiplayerFPController : Photon.MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
@@ -24,7 +24,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private LerpControlledBob m_JumpBob = new LerpControlledBob();
         [SerializeField] private float m_StepInterval;
 
-        public new PhotonView photonView;
+        public PhotonView photonView;
         public Vector3 selfPosition;
 
         private Camera m_Camera;
@@ -59,7 +59,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         // Update is called once per frame
         private void Update()
         {
-            if(photonView.IsMine)
+            if(photonView.isMine)
             {
                 RotateView();
                 // the jump state needs to read here to make sure it is not missed
@@ -96,7 +96,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
         {
-            if (stream.IsWriting)
+            if (stream.isWriting)
             {
                 stream.SendNext(transform.position);
             }

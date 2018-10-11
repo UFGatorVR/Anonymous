@@ -1,9 +1,8 @@
-﻿using Photon.Pun;
-using Photon.Realtime;
+﻿using Photon;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class photonButtons : MonoBehaviourPunCallbacks
+public class photonButtons : Photon.MonoBehaviour
 {
     public InputField createRoomInput, joinRoomInput;
 

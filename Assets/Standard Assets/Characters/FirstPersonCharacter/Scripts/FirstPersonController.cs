@@ -1,14 +1,14 @@
+using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
 using Random = UnityEngine.Random;
-using Photon.Pun;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     [RequireComponent(typeof (CharacterController))]
     [RequireComponent(typeof (AudioSource))]
-    public class FirstPersonController : MonoBehaviourPunCallbacks
+    public class FirstPersonController : MonoBehaviour
     {
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
