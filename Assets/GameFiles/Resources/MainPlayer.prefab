@@ -42,8 +42,7 @@ GameObject:
   - component: {fileID: 124917499699217152}
   - component: {fileID: 114696736517937252}
   - component: {fileID: 143782300833083718}
-  - component: {fileID: 114320256524855752}
-  - component: {fileID: 114221004761111130}
+  - component: {fileID: 114473428729173176}
   m_Layer: 0
   m_Name: MainPlayer
   m_TagString: MainCamera
@@ -315,7 +314,7 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1175655140689584}
   m_Enabled: 1
---- !u!114 &114221004761111130
+--- !u!114 &114473428729173176
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -323,33 +322,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1175655140689584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 901529b67f8555f4582cec411be91b80, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
   ObservedComponents:
-  - {fileID: 114320256524855752}
+  - {fileID: 0}
+  ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
-  InstantiationId: 0
+  instantiationId: -1
+  currentMasterID: -1
   isRuntimeInstantiated: 0
---- !u!114 &114320256524855752
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1175655140689584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d46d8ac45bd65d542b71c0dea506cd33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
 --- !u!114 &114696736517937252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -450,7 +440,7 @@ MonoBehaviour:
     BobDuration: 0
     BobAmount: 0
   m_StepInterval: 0
-  photonView: {fileID: 114221004761111130}
+  photonView: {fileID: 114473428729173176}
   selfPosition: {x: 0, y: 0, z: 0}
 --- !u!124 &124917499699217152
 Behaviour:
