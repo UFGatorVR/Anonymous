@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class photonHandler : Photon.PunBehaviour {
 
-    public GameObject mainPlayer;
+    [SerializeField] private PlayerSpawner spawnScript;
 
     private void Awake()
     {
@@ -39,12 +39,7 @@ public class photonHandler : Photon.PunBehaviour {
     {
         if(scene.name == "MainGame")
         {
-            SpawnPlayer();
+            spawnScript.SpawnPlayer();
         }
-    }
-
-    private void SpawnPlayer()
-    {
-        PhotonNetwork.Instantiate(mainPlayer.name , mainPlayer.transform.position + new Vector3(0,3,0), mainPlayer.transform.rotation, 0);
     }
 }

@@ -14,8 +14,7 @@ namespace ExitGames.Demos.DemoPunVoice {
 
     public class FirstPersonController : BaseController {
 
-        [SerializeField]
-        private MouseLookHelper mouseLook = new MouseLookHelper();
+        [SerializeField] private MouseLookHelper mouseLook = new MouseLookHelper();
 
         private float oldYRotation;
         private Quaternion velRotation;

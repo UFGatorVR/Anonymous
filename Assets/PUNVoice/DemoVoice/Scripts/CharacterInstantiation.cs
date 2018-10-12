@@ -21,8 +21,9 @@ namespace ExitGames.Demos.DemoPunVoice {
 
         public new void OnJoinedRoom() {
             if (this.PrefabsToInstantiate != null) {
+                // Select a random prefab for the player.
                 GameObject o = PrefabsToInstantiate[(PhotonNetwork.player.ID - 1) % 4];
-                //Debug.Log("Instantiating: " + o.name);
+                // Debug.Log("Instantiating: " + o.name);
                 Vector3 spawnPos = Vector3.zero;
                 if (this.SpawnPosition != null) {
                     spawnPos = this.SpawnPosition.position;
