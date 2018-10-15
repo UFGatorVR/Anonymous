@@ -10,6 +10,7 @@ public class photonHandler : Photon.PunBehaviour {
     {
         DontDestroyOnLoad(this.transform);
         SceneManager.sceneLoaded += OnSceneFinishedLoading;
+        var temp = PhotonVoiceNetwork.Client;
     }
 
     public void LoadScene()
