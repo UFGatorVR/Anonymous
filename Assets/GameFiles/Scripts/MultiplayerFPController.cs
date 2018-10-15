@@ -53,6 +53,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
 			m_MouseLook.Init(transform , m_Camera.transform);
             selfPosition = transform.position;
+
+            if (photonView.isMine) {
+                GetComponent<PhotonVoiceRecorder>().enabled = true;
+            }
         }
 
 

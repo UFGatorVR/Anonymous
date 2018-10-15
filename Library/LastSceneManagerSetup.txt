@@ -1,7 +1,7 @@
 sceneSetups:
 - path: Assets/GameFiles/Scenes/MenuScene.unity
   isLoaded: 1
-  isActive: 0
-- path: Assets/PUNVoice/DemoVoice/DemoVoice-Scene.unity
-  isLoaded: 1
   isActive: 1
+- path: Assets/GameFiles/Scenes/MainGame.unity
+  isLoaded: 1
+  isActive: 0
