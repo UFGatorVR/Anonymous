@@ -21,10 +21,25 @@ public class PlayerInstanceController : MonoBehaviour {
         if (photonView.isMine)
         {
             //Handle our movement/camera
+            selfPosition = transform.position;
         }
         else
         {
             //Handle other's movement/camera
+            transform.position = selfPosition;
         }
     }
+
+    private void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.SendNext(transform.position);
+        }
+        else
+        {
+            selfPosition = (Vector3)stream.ReceiveNext();
+        }
+    }
+
 }
