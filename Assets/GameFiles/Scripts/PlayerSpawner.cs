@@ -8,7 +8,7 @@ public class PlayerSpawner : OnJoinedInstantiate {
 
     public static event OnPlayerSpawned PlayerSpawned;
 
-    private int curr = 0;
+    private static int curr = 0;
 
     public void SpawnPlayer()
     {
