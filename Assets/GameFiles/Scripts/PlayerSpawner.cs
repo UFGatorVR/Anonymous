@@ -24,6 +24,8 @@ public class PlayerSpawner : OnJoinedInstantiate {
                 spawnPoint = GetSpawnPoint();
             }
 
+            Debug.Log(spawnPoint);
+
             playerPrefab = PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity, 0);
 
             if( PlayerSpawned != null)
@@ -38,9 +40,9 @@ public class PlayerSpawner : OnJoinedInstantiate {
     public Transform GetSpawnPoint()
     {
         Transform spawnPoint = null;
-        for (int i = 0; i < transform.GetChild(0).childCount; i++)
+        for (int i = 0; i < transform.childCount; i++)
         {
-            spawnPoint = gameObject.transform.GetChild(0).GetChild(i);
+            spawnPoint = gameObject.transform.GetChild(i);
             if(spawnPoint.childCount == 0)
             {
                 return spawnPoint;
