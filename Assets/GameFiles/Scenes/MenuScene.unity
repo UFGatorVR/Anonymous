@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 314020985}
   - component: {fileID: 314020984}
   - component: {fileID: 314020986}
+  - component: {fileID: 314020987}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -444,6 +445,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   createRoomInput: {fileID: 1845238573}
   joinRoomInput: {fileID: 449944118}
+  pHandler: {fileID: 844243193}
+--- !u!114 &314020987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 314020983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cf9c26398e6cf74daa14d22db8d9e86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   pHandler: {fileID: 844243193}
 --- !u!1 &449944116
 GameObject:
@@ -1201,6 +1214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnScript: {fileID: 844243195}
+  roomsList: {fileID: 314020987}
 --- !u!4 &844243194
 Transform:
   m_ObjectHideFlags: 0
@@ -1229,7 +1243,7 @@ MonoBehaviour:
   SpawnPosition: {fileID: 503363959}
   PositionOffset: 0
   PrefabsToInstantiate:
-  - {fileID: 1175655140689584, guid: 62f42bd336b211845a8cc4f854663a08, type: 2}
+  - {fileID: 1175818590751100, guid: 8d33c0cb99a36d8428eae394119dd749, type: 2}
 --- !u!1 &879285676
 GameObject:
   m_ObjectHideFlags: 0

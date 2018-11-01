@@ -5,6 +5,7 @@ using UnityEngine;
 public class photonHandler : Photon.PunBehaviour {
 
     [SerializeField] private PlayerSpawner spawnScript;
+    public ListRooms roomsList;
 
     private void Awake()
     {
@@ -15,12 +16,13 @@ public class photonHandler : Photon.PunBehaviour {
 
     public void LoadScene()
     {
-        PhotonNetwork.LoadLevel("MainGame");
+        PhotonNetwork.LoadLevel("Environment");
     }
 
     public void CreateNewRoom(string text)
     {
         PhotonNetwork.CreateRoom(text, new RoomOptions { MaxPlayers = 6 }, null);
+        roomsList.OnGUI();
     }
 
     public void JoinOrCreateRoom(string text)
@@ -28,6 +30,7 @@ public class photonHandler : Photon.PunBehaviour {
         RoomOptions roomOptions = new RoomOptions();
         roomOptions.MaxPlayers = 6;
         PhotonNetwork.JoinOrCreateRoom(text, roomOptions, TypedLobby.Default);
+        roomsList.OnGUI();
     }
 
     public override void OnJoinedRoom()
@@ -38,7 +41,7 @@ public class photonHandler : Photon.PunBehaviour {
 
     private void OnSceneFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        if(scene.name == "MainGame")
+        if(scene.name == "Environment")
         {
             spawnScript.SpawnPlayer();
         }
