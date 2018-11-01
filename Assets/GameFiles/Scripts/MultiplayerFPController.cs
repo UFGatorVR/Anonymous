@@ -111,7 +111,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
         }
 
-
         private void FixedUpdate()
         {
             float speed;
@@ -191,7 +190,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Camera.transform.localPosition = newCameraPosition;
         }
 
-
         private void GetInput(out float speed)
         {
             // Read input
@@ -229,7 +227,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_MouseLook.LookRotation (transform, m_Camera.transform);
         }
-
 
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {

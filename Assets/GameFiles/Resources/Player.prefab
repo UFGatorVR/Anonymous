@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 114387851718173130}
   - component: {fileID: 114429710000962296}
   - component: {fileID: 114926382768143834}
+  - component: {fileID: 114302744264541074}
+  - component: {fileID: 33898619531002470}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -57,7 +59,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4095135377205436}
   - component: {fileID: 20221427521739740}
-  - component: {fileID: 81083551865553444}
   - component: {fileID: 114842427830436208}
   m_Layer: 0
   m_Name: Main Camera
@@ -326,13 +327,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1365461455421008}
   m_Mesh: {fileID: 4300000, guid: 581a0d1f069aa2d41b4112fb6b01244e, type: 3}
---- !u!81 &81083551865553444
-AudioListener:
+--- !u!33 &33898619531002470
+MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1545626724220224}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1175818590751100}
+  m_Mesh: {fileID: 4300004, guid: ef6178546f77bc546af127fb4c56da0c, type: 3}
 --- !u!82 &82188514407627316
 AudioSource:
   m_ObjectHideFlags: 1
@@ -459,6 +460,19 @@ MonoBehaviour:
   armModel: {fileID: 114451414971820150}
   isDeactivatedWhenDisconnected: 1
   controllerHand: 2
+--- !u!114 &114302744264541074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1175818590751100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1fddb08125c36e4cbf5688a57cf83ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  photonView: {fileID: 114926382768143834}
+  selfPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &114387851718173130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -476,7 +490,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1175818590751100}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b23b644f2525c1c4a9fd5b77d9505148, type: 3}
   m_Name: 
@@ -604,11 +618,12 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
-  synchronization: 0
+  synchronization: 3
   onSerializeTransformOption: 3
   onSerializeRigidBodyOption: 2
   ownershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 4839234679014334}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1
