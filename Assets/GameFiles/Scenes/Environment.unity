@@ -1413,7 +1413,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 285264032}
-  - component: {fileID: 285264031}
   - component: {fileID: 285264030}
   - component: {fileID: 285264029}
   m_Layer: 0
@@ -1526,21 +1525,6 @@ MonoBehaviour:
   instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
---- !u!114 &285264031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 285264028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3c4bbfe3ecffb846a349b11f15425c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPosition: {fileID: 285264032}
-  PositionOffset: 0
-  PrefabsToInstantiate:
-  - {fileID: 1175818590751100, guid: 8d33c0cb99a36d8428eae394119dd749, type: 2}
 --- !u!4 &285264032
 Transform:
   m_ObjectHideFlags: 0

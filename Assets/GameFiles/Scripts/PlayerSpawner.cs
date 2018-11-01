@@ -8,14 +8,11 @@ public class PlayerSpawner : OnJoinedInstantiate {
 
     public static event OnPlayerSpawned PlayerSpawned;
 
-    public PhotonView photonView;
-
     public void SpawnPlayer()
     {
-
         Debug.Log("Player joined room");
         // Select a prefab for the player.
-        if( this.PrefabsToInstantiate != null && photonView.isMine)
+        if( this.PrefabsToInstantiate != null)
         {
             // Choose which prefab we will be spawning next.
             GameObject playerPrefab = PrefabsToInstantiate[0];
