@@ -12,6 +12,7 @@ public class PlayerInstanceController : MonoBehaviour {
         if (photonView.isMine)
         {
             GetComponent<PhotonVoiceRecorder>().enabled = true;
+            transform.GetComponentInChildren<Camera>().enabled = true;
         }
     }
 	

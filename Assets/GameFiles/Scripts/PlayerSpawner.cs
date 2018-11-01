@@ -8,8 +8,6 @@ public class PlayerSpawner : OnJoinedInstantiate {
 
     public static event OnPlayerSpawned PlayerSpawned;
 
-    private static int curr = 0;
-
     public void SpawnPlayer()
     {
         Debug.Log("Player joined room");
@@ -23,8 +21,7 @@ public class PlayerSpawner : OnJoinedInstantiate {
             // Make sure that this component has a child, and that child has a transform.
             if( this.GetComponentInChildren<Transform>() != null)
             {
-                //spawnPoint = GetSpawnPoint();
-                spawnPoint = temp();
+                spawnPoint = GetSpawnPoint();
             }
 
             Debug.Log(spawnPoint);
@@ -40,23 +37,19 @@ public class PlayerSpawner : OnJoinedInstantiate {
         }
     }
 
-    public Transform temp ()
+    public Transform GetSpawnPoint()
     {
-        return gameObject.transform.GetChild(curr++).transform;
-    }
-
-    /*public Transform GetSpawnPoint()
-    {
+        Transform spawner = GameObject.FindGameObjectWithTag("PlayerSpawner").GetComponent<Transform>();
         Transform spawnPoint = null;
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < spawner.childCount; i++)
         {
-            spawnPoint = gameObject.transform.GetChild(i);
+            spawnPoint = spawner.GetChild(i);
             if(spawnPoint.childCount == 0)
             {
                 return spawnPoint;
             }
         }
         return null;
-    }*/
+    }
 
 }
