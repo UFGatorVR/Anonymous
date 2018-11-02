@@ -5,7 +5,7 @@ public class photonConnect : Photon.PunBehaviour {
 
     public string versionName = "0.1";
 
-    public GameObject sectionView1, sectionView2, sectionView3;
+    public GameObject sectionView1, sectionView2, sectionView3, roomList;
 
     // Use this for initialization
     /*
@@ -43,6 +43,11 @@ public class photonConnect : Photon.PunBehaviour {
             sectionView2.SetActive(false);
         }
 
+        if (roomList.activeInHierarchy)
+        {
+            roomList.SetActive(false);
+        }
+
         sectionView3.SetActive(true);
 
         Debug.Log("Disconnected from Photon services");
@@ -52,6 +57,7 @@ public class photonConnect : Photon.PunBehaviour {
     {
         sectionView1.SetActive(false);
         sectionView2.SetActive(true);
+        roomList.SetActive(true);
 
         Debug.Log("On joined lobby");
     }
