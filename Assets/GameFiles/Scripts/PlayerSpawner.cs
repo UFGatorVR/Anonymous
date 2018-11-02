@@ -11,8 +11,9 @@ public class PlayerSpawner : OnJoinedInstantiate {
     public void SpawnPlayer()
     {
         Debug.Log("Player joined room");
+        Debug.Log("LENGTH" + PhotonNetwork.GetRoomList().Length);
         // Select a prefab for the player.
-        if( this.PrefabsToInstantiate != null)
+        if ( this.PrefabsToInstantiate != null)
         {
             // Choose which prefab we will be spawning next.
             GameObject playerPrefab = PrefabsToInstantiate[0];
@@ -35,6 +36,7 @@ public class PlayerSpawner : OnJoinedInstantiate {
 
             playerPrefab.transform.parent = spawnPoint;
         }
+       
     }
 
     public Transform GetSpawnPoint()
