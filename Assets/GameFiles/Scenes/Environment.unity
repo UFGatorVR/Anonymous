@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1202585, g: 0.15342757, b: 0.2272985, a: 1}
+  m_IndirectSpecularColor: {r: 0.4496748, g: 0.49681515, b: 0.5599008, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpawnPosition: {fileID: 0}
-  PositionOffset: 2
+  PositionOffset: 0
   PrefabsToInstantiate:
   - {fileID: 1175818590751100, guid: 8d33c0cb99a36d8428eae394119dd749, type: 2}
   photonView: {fileID: 285264030}

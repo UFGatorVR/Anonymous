@@ -53,6 +53,12 @@ public class PlayerSpawner : OnJoinedInstantiate {
         return null;
     }
 
+    private void Start()
+    {
+        transform.position = new Vector3(-1.9f, 0.98f, 2.03f);
+        selfPosition = transform.position;
+    }
+
     void Update()
     {
         if (photonView.isMine)
