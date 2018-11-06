@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerSpawner : OnJoinedInstantiate {
 
     public delegate void OnPlayerSpawned(GameObject character);
 
     public static event OnPlayerSpawned PlayerSpawned;
+    public PhotonView photonView;
+    public Vector3 selfPosition;
 
     public void SpawnPlayer()
     {
@@ -23,8 +26,6 @@ public class PlayerSpawner : OnJoinedInstantiate {
             {
                 spawnPoint = GetSpawnPoint();
             }
-
-            Debug.Log(spawnPoint);
 
             playerPrefab = PhotonNetwork.Instantiate(playerPrefab.name, spawnPoint.position, Quaternion.identity, 0);
 
@@ -52,4 +53,29 @@ public class PlayerSpawner : OnJoinedInstantiate {
         return null;
     }
 
+    void Update()
+    {
+        if (photonView.isMine)
+        {
+            //Handle our movement/camera
+            selfPosition = transform.position;
+        }
+        else
+        {
+            //Handle other's movement/camera
+            transform.position = selfPosition;
+        }
+    }
+
+    private void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.isWriting)
+        {
+            stream.SendNext(transform.position);
+        }
+        else
+        {
+            selfPosition = (Vector3)stream.ReceiveNext();
+        }
+    }
 }

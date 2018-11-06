@@ -2,9 +2,10 @@
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class photonHandler : Photon.PunBehaviour {
+public class photonHandler : PunBehaviour
+{
 
-    [SerializeField] private PlayerSpawner spawnScript;
+    private PlayerSpawner spawnScript;
     public ListRooms roomsList;
 
     private void Awake()
@@ -12,6 +13,7 @@ public class photonHandler : Photon.PunBehaviour {
         DontDestroyOnLoad(this.transform);
         SceneManager.sceneLoaded += OnSceneFinishedLoading;
         var temp = PhotonVoiceNetwork.Client;
+        Debug.Log("Awake function was called.");
     }
 
     public void LoadScene()
@@ -43,6 +45,7 @@ public class photonHandler : Photon.PunBehaviour {
     {
         if(scene.name == "Environment")
         {
+            spawnScript = GameObject.FindGameObjectWithTag("PlayerSpawner").GetComponent<PlayerSpawner>();
             spawnScript.SpawnPlayer();
         }
     }

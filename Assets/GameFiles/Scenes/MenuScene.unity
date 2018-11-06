@@ -1166,7 +1166,6 @@ GameObject:
   m_Component:
   - component: {fileID: 844243194}
   - component: {fileID: 844243193}
-  - component: {fileID: 844243195}
   m_Layer: 0
   m_Name: PhotonDontDestory
   m_TagString: Untagged
@@ -1185,7 +1184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 462f6524022ce5947aee0e5b3adf6346, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnScript: {fileID: 844243195}
+  spawnScript: {fileID: 0}
   roomsList: {fileID: 314020987}
 --- !u!4 &844243194
 Transform:
@@ -1200,21 +1199,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &844243195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 844243192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3c4bbfe3ecffb846a349b11f15425c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnPosition: {fileID: 0}
-  PositionOffset: 2
-  PrefabsToInstantiate:
-  - {fileID: 1175818590751100, guid: 8d33c0cb99a36d8428eae394119dd749, type: 2}
 --- !u!1 &879285676
 GameObject:
   m_ObjectHideFlags: 0
