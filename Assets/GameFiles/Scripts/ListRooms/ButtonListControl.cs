@@ -26,4 +26,9 @@ public class ButtonListControl : Photon.MonoBehaviour
         button.transform.SetParent(buttonTemplatePrefab.transform.parent, false);
         
     }
+
+    public void RemoveServer()
+    {
+
+    }
 }
