@@ -34,4 +34,14 @@ public class ListController : Photon.MonoBehaviour {
             newRoom.transform.localScale = Vector3.one;
         }
     }
+
+    /*public void RemoveServer()
+    {
+        Button parent;
+        string serverName;
+        parent = transform.parent.gameObject.GetComponent<Button>();
+        serverName = parent.GetComponentInChildren<Text>().text;
+        //Close the server
+
+    }*/
 }

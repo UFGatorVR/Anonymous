@@ -8,6 +8,8 @@ TagManager:
   - PhotonHandler
   - TotalPlayer
   - CurrentPlayer
+  - PlayerCanvas
+  - Close Server
   layers:
   - Default
   - TransparentFX
